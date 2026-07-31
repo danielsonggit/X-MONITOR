@@ -1,0 +1,31 @@
+[Unit]
+Description=Grok-backed X account monitor
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=x-monitor
+Group=x-monitor
+WorkingDirectory=/var/lib/x-monitor
+Environment=HOME=/var/lib/x-monitor
+EnvironmentFile=/etc/x-monitor/x-monitor.env
+ExecStart=/usr/local/bin/x-monitor --config /etc/x-monitor/config.toml serve
+Restart=on-failure
+RestartSec=15s
+TimeoutStopSec=75s
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+LockPersonality=true
+RestrictSUIDSGID=true
+ReadWritePaths=/var/lib/x-monitor
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,32 @@
+version: 2
+
+project_name: x-monitor
+
+builds:
+  - id: x-monitor
+    main: ./cmd/x-monitor
+    binary: x-monitor
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - >-
+        -s -w
+        -X main.version={{.Version}}
+        -X main.commit={{.Commit}}
+        -X main.builtAt={{.Date}}
+
+archives:
+  - formats:
+      - tar.gz
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  disable: true

@@ -1,0 +1,10 @@
+/bin/
+/configs/config.toml
+/*.db
+/*.db-shm
+/*.db-wal
+/data/
+/runs/
+/.idea/
+/.vscode/
+.DS_Store

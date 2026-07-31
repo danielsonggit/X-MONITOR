@@ -1,0 +1,46 @@
+[scheduler]
+# Standard five-field cron expression. gocron runs this inside the Go process.
+cron = "0 * * * *"
+timezone = "Asia/Shanghai"
+run_on_startup = true
+job_timeout = "50m"
+
+[monitor]
+accounts = [
+  "@CryptoDinduz",
+  "@2442lll",
+  "@iruletrenches",
+  "@btc_eth_owner",
+  "@yeonwoo1102",
+]
+content_types = ["original", "reply", "repost"]
+normal_window = "2h"
+first_run_report_window = "1h"
+recovery_max_window = "24h"
+recovery_overlap = "15m"
+
+[grok]
+# Use a fixed absolute path in production.
+binary = "/var/lib/x-monitor/.grok/bin/grok"
+model = "grok-4.5"
+depth = "quick"
+timeout = "10m"
+max_turns = 40
+retention_days = 7
+max_output_size = 33554432
+
+[telegram]
+chat_id = "-1001234567890"
+# The token itself must not be written to this TOML file.
+token_env = "XMONITOR_TELEGRAM_TOKEN"
+max_attempts = 8
+lease = "15m"
+
+[storage]
+database = "/var/lib/x-monitor/state.db"
+runs_directory = "/var/lib/x-monitor/runs"
+lock_file = "/var/lib/x-monitor/x-monitor.lock"
+
+[logging]
+level = "info"
+format = "json"

@@ -1,0 +1,24 @@
+[Unit]
+Description=Grok-backed X account monitor
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.local/share/x-monitor
+Environment=HOME=%h
+EnvironmentFile=%h/.config/x-monitor/x-monitor.env
+ExecStart=%h/.local/bin/x-monitor --config %h/.config/x-monitor/config.toml serve
+Restart=on-failure
+RestartSec=15s
+TimeoutStopSec=75s
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+RestrictSUIDSGID=true
+ReadWritePaths=%h/.local/share/x-monitor %h/.grok
+
+[Install]
+WantedBy=default.target
