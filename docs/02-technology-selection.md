@@ -136,7 +136,9 @@ accounts = [
   "@2442lll",
   "@iruletrenches",
   "@btc_eth_owner",
-  "@yeonwoo1102"
+  "@yeonwoo1102",
+  "@xtony1314",
+  "@Crypto_Cat888"
 ]
 content_types = ["original", "reply", "repost"]
 normal_window = "2h"
