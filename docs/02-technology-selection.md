@@ -138,7 +138,8 @@ accounts = [
   "@btc_eth_owner",
   "@yeonwoo1102",
   "@xtony1314",
-  "@Crypto_Cat888"
+  "@Crypto_Cat888",
+  "@AIonBase_"
 ]
 content_types = ["original", "reply", "repost"]
 normal_window = "2h"
