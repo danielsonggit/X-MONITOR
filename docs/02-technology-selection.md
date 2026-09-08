@@ -139,7 +139,8 @@ accounts = [
   "@yeonwoo1102",
   "@xtony1314",
   "@Crypto_Cat888",
-  "@AIonBase_"
+  "@AIonBase_",
+  "@blu0222"
 ]
 content_types = ["original", "reply", "repost"]
 normal_window = "2h"
