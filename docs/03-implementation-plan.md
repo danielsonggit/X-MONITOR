@@ -229,6 +229,8 @@ sqlc generate
    - `@AIonBase_`
    - `@blu0222`
    - `@ShawnThread`
+   - `@theunipcs`
+   - `@stitchdegen`
 2. 覆盖原创、回复和转帖。
 3. 不设置关键词过滤。
 4. 正常查询最近两小时。

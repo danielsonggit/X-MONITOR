@@ -141,7 +141,9 @@ accounts = [
   "@Crypto_Cat888",
   "@AIonBase_",
   "@blu0222",
-  "@ShawnThread"
+  "@ShawnThread",
+  "@theunipcs",
+  "@stitchdegen"
 ]
 content_types = ["original", "reply", "repost"]
 normal_window = "2h"

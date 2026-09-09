@@ -8,7 +8,8 @@ X Search，监控指定公开账户，并把尚未发送的新帖子推送给 Te
 
 - 账户：`@CryptoDinduz`、`@2442lll`、`@iruletrenches`、
   `@btc_eth_owner`、`@yeonwoo1102`、`@xtony1314`、`@Crypto_Cat888`、
-  `@AIonBase_`、`@blu0222`、`@ShawnThread`
+  `@AIonBase_`、`@blu0222`、`@ShawnThread`、`@theunipcs`、
+  `@stitchdegen`
 - 内容：原创、回复、转帖
 - 关键词：不限制
 - 调度：每小时整点，`Asia/Shanghai`

@@ -17,6 +17,8 @@ accounts = [
   "@AIonBase_",
   "@blu0222",
   "@ShawnThread",
+  "@theunipcs",
+  "@stitchdegen",
 ]
 content_types = ["original", "reply", "repost"]
 normal_window = "2h"
