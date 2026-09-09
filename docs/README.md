@@ -13,7 +13,7 @@
 ## 当前状态
 
 - 项目状态：已实现、通过测试，并已在 Linux 用户级 systemd 环境完成部署验证
-- 目标账户：`@CryptoDinduz`、`@2442lll`、`@iruletrenches`、`@btc_eth_owner`、`@yeonwoo1102`、`@xtony1314`、`@Crypto_Cat888`、`@AIonBase_`、`@blu0222`
+- 目标账户：`@CryptoDinduz`、`@2442lll`、`@iruletrenches`、`@btc_eth_owner`、`@yeonwoo1102`、`@xtony1314`、`@Crypto_Cat888`、`@AIonBase_`、`@blu0222`、`@ShawnThread`
 - 调度频率：每小时
 - 调度实现：Go 常驻进程内的 `go-co-op/gocron/v2`
 - 内容范围：原创、回复、转帖，不设置关键词过滤
