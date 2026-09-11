@@ -143,7 +143,8 @@ accounts = [
   "@blu0222",
   "@ShawnThread",
   "@theunipcs",
-  "@stitchdegen"
+  "@stitchdegen",
+  "@lookonchain"
 ]
 content_types = ["original", "reply", "repost"]
 normal_window = "2h"
