@@ -20,6 +20,7 @@ accounts = [
   "@theunipcs",
   "@stitchdegen",
   "@lookonchain",
+  "@XXAntiWar",
 ]
 content_types = ["original", "reply", "repost"]
 normal_window = "2h"

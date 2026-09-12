@@ -144,7 +144,8 @@ accounts = [
   "@ShawnThread",
   "@theunipcs",
   "@stitchdegen",
-  "@lookonchain"
+  "@lookonchain",
+  "@XXAntiWar"
 ]
 content_types = ["original", "reply", "repost"]
 normal_window = "2h"
