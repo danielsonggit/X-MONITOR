@@ -24,6 +24,7 @@ import (
 )
 
 var authFailurePattern = regexp.MustCompile(`(?i)not logged in|not authenticated|unauthorized|login required|please (?:log|sign) in|authentication (?:failed|required)|invalid (?:access |refresh )?token|token (?:expired|invalid)|re-authentication required`)
+var usageExhaustedPattern = regexp.MustCompile(`(?i)grok build usage balance exhausted|usage (?:balance|allowance) exhausted|(?:weekly )?usage limit (?:is )?(?:met|reached|exhausted)`)
 
 type Client struct {
 	cfg    config.Config
@@ -167,6 +168,20 @@ func (c *Client) Search(ctx context.Context, request ports.SearchRequest) (ports
 	_ = privateWrite(filepath.Join(runPath, "stdout.json"), processResult.stdout)
 	_ = privateWrite(filepath.Join(runPath, "stderr.txt"), processResult.stderr)
 
+	if cliError := extractCLIError(processResult.stdout); cliError != "" {
+		code, message := classifyGrokFailure(cliError)
+		runManifest.Status = "failed"
+		runManifest.CompletedAt = time.Now().UTC()
+		runManifest.ExitCode = processResult.exitCode
+		runManifest.TimedOut = processResult.timedOut
+		runManifest.ErrorCode = code
+		runManifest.OutputCutoff = processResult.truncated
+		_ = privateWriteJSON(filepath.Join(runPath, "manifest.json"), runManifest)
+		return ports.SearchResult{}, &domain.SearchError{
+			Code: code, Message: message, Path: runPath, Cause: errors.New(cliError),
+		}
+	}
+
 	answer := extractAnswer(processResult.stdout)
 	if strings.TrimSpace(answer) == "" {
 		code := "grok_execution_failed"
@@ -175,9 +190,8 @@ func (c *Client) Search(ctx context.Context, request ports.SearchRequest) (ports
 		if processResult.timedOut {
 			code = "grok_timed_out"
 			message = "Grok timed out before returning a usable answer"
-		} else if authFailurePattern.MatchString(combined) {
-			code = "grok_not_authenticated"
-			message = "Grok authentication is required; run grok login"
+		} else {
+			code, message = classifyGrokFailure(combined)
 		}
 		runManifest.Status = "failed"
 		runManifest.CompletedAt = time.Now().UTC()
@@ -500,6 +514,30 @@ func extractAnswer(stdout []byte) string {
 		return strings.TrimSpace(envelope.Text)
 	}
 	return value
+}
+
+func extractCLIError(stdout []byte) string {
+	var envelope struct {
+		Type    string `json:"type"`
+		Message string `json:"message"`
+	}
+	if json.Unmarshal(stdout, &envelope) != nil || !strings.EqualFold(strings.TrimSpace(envelope.Type), "error") {
+		return ""
+	}
+	if message := strings.TrimSpace(envelope.Message); message != "" {
+		return message
+	}
+	return "Grok CLI returned an error"
+}
+
+func classifyGrokFailure(value string) (string, string) {
+	if usageExhaustedPattern.MatchString(value) {
+		return "grok_usage_exhausted", "Grok Build usage balance is exhausted; wait for the weekly reset or add usage credits"
+	}
+	if authFailurePattern.MatchString(value) {
+		return "grok_not_authenticated", "Grok authentication is required; run grok login"
+	}
+	return "grok_execution_failed", "Grok did not return a usable answer"
 }
 
 var _ ports.Searcher = (*Client)(nil)
