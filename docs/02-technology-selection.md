@@ -156,7 +156,7 @@ recovery_max_window = "24h"
 
 [grok]
 binary = "/home/x-monitor/.grok/bin/grok"
-model = "grok-4.5"
+model = "grok-4.7"
 depth = "quick"
 timeout = "10m"
 max_turns = 40

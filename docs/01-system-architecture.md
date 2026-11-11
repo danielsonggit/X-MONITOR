@@ -266,7 +266,7 @@ exec.CommandContext(ctx, grokBinary, args...)
 --tools x_search
 --deny MCPTool
 --always-approve
---model grok-4.5
+--model grok-4.7
 --output-format json
 --no-memory
 --no-subagents

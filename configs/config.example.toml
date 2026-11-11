@@ -33,7 +33,7 @@ recovery_overlap = "15m"
 [grok]
 # Use a fixed absolute path in production.
 binary = "/var/lib/x-monitor/.grok/bin/grok"
-model = "grok-4.5"
+model = "grok-4.7"
 depth = "quick"
 timeout = "10m"
 max_turns = 40

@@ -38,7 +38,7 @@ lock_file = "` + filepath.Join(temp, "x-monitor.lock") + `"
 	require.Equal(t, []string{"original", "reply", "repost"}, cfg.Monitor.ContentTypes)
 	require.Equal(t, 2*time.Hour, cfg.Monitor.NormalWindow)
 	require.Equal(t, time.Hour, cfg.Monitor.FirstRunReportWindow)
-	require.Equal(t, "grok-4.5", cfg.Grok.Model)
+	require.Equal(t, "grok-4.7", cfg.Grok.Model)
 	require.Equal(t, "quick", cfg.Grok.Depth)
 	require.Equal(t, "test-token", cfg.Telegram.Token)
 	require.Equal(t, "debug", cfg.Logging.Level)

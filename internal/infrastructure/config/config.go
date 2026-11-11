@@ -159,7 +159,7 @@ func defaults() rawConfig {
 	raw.Monitor.FirstRunReportWindow = "1h"
 	raw.Monitor.RecoveryMaxWindow = "24h"
 	raw.Monitor.RecoveryOverlap = "15m"
-	raw.Grok.Model = "grok-4.5"
+	raw.Grok.Model = "grok-4.7"
 	raw.Grok.Depth = "quick"
 	raw.Grok.Timeout = "10m"
 	raw.Grok.MaxTurns = 40

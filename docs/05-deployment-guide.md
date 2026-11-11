@@ -111,6 +111,25 @@ ssh jmk '"$HOME/.grok/bin/grok" --version; \
 这是部署记录，不是永久信任值。升级 Grok 后版本和校验和必然变化，应重新核验官方
 来源并更新运维记录，不能因为与旧值不同就直接判定为恶意。
 
+2026-11-11，jmk 已通过官方 `grok update --stable` 从 `0.2.117` 升级到
+`1.0.77 (50ca579fa996)`，并将 X Monitor 的模型改为 `grok-4.7`。
+升级后二进制 SHA-256 为：
+
+```text
+b702950aa5827d855e493278ab6215a4e0f5bceb5bba6c6243a9f55cdd143b0a
+```
+
+此次故障有两个原因：原模型 `grok-4.5` 返回 `unknown model id`；更换模型后，
+旧 CLI 又被服务端以 `426 Upgrade Required` 拒绝（当时最低版本要求 `1.0.13`）。
+排障时先在与服务相同的代理环境下执行 `grok models` 核对账户可用模型，
+再检查 CLI 版本。版本升级与模型切换都应保留回滚备份，并用完整监控任务
+验证检索和 Telegram 投递；`doctor` 通过并不代表模型调用或额度正常。
+
+本次私有备份目录为
+`/home/daniel/.local/share/x-monitor/upgrade-backup.kuHRzq`，包含旧 CLI、
+Grok 配置、认证文件和 X Monitor 配置。目录应仅服务用户可访问，认证文件
+不得提交到仓库。原代理仍使用 `127.0.0.1:7891`。
+
 ### 3.5 写入服务配置
 
 从示例复制一份配置，并改成用户目录：
