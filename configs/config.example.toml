@@ -1,6 +1,6 @@
 [scheduler]
 # Standard five-field cron expression. gocron runs this inside the Go process.
-cron = "0 * * * *"
+cron = "0 */2 * * *"
 timezone = "Asia/Shanghai"
 run_on_startup = true
 job_timeout = "50m"

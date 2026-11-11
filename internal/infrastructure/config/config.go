@@ -150,7 +150,7 @@ func Load(path string) (Config, error) {
 
 func defaults() rawConfig {
 	var raw rawConfig
-	raw.Scheduler.Cron = "0 * * * *"
+	raw.Scheduler.Cron = "0 */2 * * *"
 	raw.Scheduler.Timezone = "Asia/Shanghai"
 	raw.Scheduler.RunOnStartup = true
 	raw.Scheduler.JobTimeout = "50m"

@@ -8,7 +8,7 @@ The primary documentation is available in
 
 Key properties:
 
-- in-process hourly scheduling with gocron, not Linux cron;
+- in-process scheduling every two hours with gocron, not Linux cron;
 - Grok `x_search` executed in a private, restricted environment;
 - canonical X status URL deduplication in SQLite;
 - transactional Telegram outbox with leases and retries;

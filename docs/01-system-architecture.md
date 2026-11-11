@@ -6,7 +6,7 @@
 
 系统负责：
 
-- 每小时监控指定公开 X/Twitter 账户。
+- 每两小时监控指定公开 X/Twitter 账户。
 - 通过 Grok CLI 和 Grok X Search 检索内容。
 - 覆盖原创、回复和转帖，不设置关键词过滤。
 - 使用 X status URL 去重。
@@ -155,7 +155,7 @@ sequenceDiagram
 
 正常运行步骤：
 
-1. gocron 在每个整点触发任务。
+1. gocron 在每个偶数小时整点触发任务（Asia/Shanghai）。
 2. gocron singleton 检查同一进程内是否重叠。
 3. flock 检查是否有另一个进程正在执行。
 4. SQLite 创建本轮 run。
@@ -174,7 +174,7 @@ sequenceDiagram
 ### 4.1 正常调度
 
 ```text
-Cron: 0 * * * *
+Cron: 0 */2 * * *
 Timezone: Asia/Shanghai
 Overlap: skip
 Job timeout: 50m

@@ -13,7 +13,7 @@ systemd user service
         │
         ▼
  x-monitor Go 进程
-   ├─ gocron 每小时触发
+   ├─ gocron 每两小时触发
    ├─ SQLite 保存状态和 Outbox
    ├─ Grok CLI ──► 127.0.0.1:7891 ──► xAI / X Search
    └─ Telegram ──► 127.0.0.1:7891 ──► Telegram Bot API

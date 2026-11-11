@@ -171,7 +171,7 @@ x-monitor version
 
 交付：
 
-- `0 * * * *` 整点调度。
+- `0 */2 * * *` 每两小时整点调度（Asia/Shanghai 偶数小时）。
 - `Asia/Shanghai` 时区。
 - singleton reschedule。
 - 启动补跑。
@@ -218,7 +218,7 @@ sqlc generate
 
 必须满足：
 
-1. 每小时监控：
+1. 每两小时监控：
    - `@CryptoDinduz`
    - `@2442lll`
    - `@iruletrenches`

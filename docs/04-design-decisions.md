@@ -109,7 +109,7 @@ Telegram HTTP 细节。
 | 更换 Grok CLI 参数或解析格式 | `adapters/grok` |
 | 更换 Telegram SDK | `adapters/telegram` |
 | 修改表结构 | `adapters/sqlite` |
-| 修改每小时触发规则 | `infrastructure/scheduler` 和配置 |
+| 修改定时触发规则 | `infrastructure/scheduler` 和配置 |
 | 新增 CLI 子命令 | `commands` |
 
 ## 4. 这套结构的代价
