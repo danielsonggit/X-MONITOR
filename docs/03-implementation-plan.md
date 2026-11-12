@@ -219,12 +219,6 @@ sqlc generate
 必须满足：
 
 1. 每两小时监控：
-   - `@CryptoDinduz`
-   - `@2442lll`
-   - `@iruletrenches`
-   - `@btc_eth_owner`
-   - `@yeonwoo1102`
-   - `@xtony1314`
    - `@Crypto_Cat888`
    - `@AIonBase_`
    - `@blu0222`
@@ -235,6 +229,7 @@ sqlc generate
    - `@XXAntiWar`
    - `@Jason60704294`
    - `@luge517`
+   - `@xy_xtony`
 2. 覆盖原创、回复和转帖。
 3. 不设置关键词过滤。
 4. 正常查询最近两小时。

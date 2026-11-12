@@ -6,11 +6,10 @@ X Search，监控指定公开账户，并把尚未发送的新帖子推送给 Te
 
 ## 当前监控规则
 
-- 账户：`@CryptoDinduz`、`@2442lll`、`@iruletrenches`、
-  `@btc_eth_owner`、`@yeonwoo1102`、`@xtony1314`、`@Crypto_Cat888`、
+- 账户：`@Crypto_Cat888`、
   `@AIonBase_`、`@blu0222`、`@ShawnThread`、`@theunipcs`、
   `@stitchdegen`、`@lookonchain`、`@XXAntiWar`、`@Jason60704294`、
-  `@luge517`
+  `@luge517`、`@xy_xtony`
 - 内容：原创、回复、转帖
 - 关键词：不限制
 - 调度：每两小时整点（偶数小时），`Asia/Shanghai`
