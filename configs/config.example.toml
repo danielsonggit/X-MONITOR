@@ -7,12 +7,9 @@ job_timeout = "50m"
 
 [monitor]
 accounts = [
-  "@Crypto_Cat888",
   "@AIonBase_",
-  "@blu0222",
   "@ShawnThread",
   "@theunipcs",
-  "@stitchdegen",
   "@lookonchain",
   "@XXAntiWar",
   "@Jason60704294",

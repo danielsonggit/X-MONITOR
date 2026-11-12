@@ -219,12 +219,9 @@ sqlc generate
 必须满足：
 
 1. 每两小时监控：
-   - `@Crypto_Cat888`
    - `@AIonBase_`
-   - `@blu0222`
    - `@ShawnThread`
    - `@theunipcs`
-   - `@stitchdegen`
    - `@lookonchain`
    - `@XXAntiWar`
    - `@Jason60704294`

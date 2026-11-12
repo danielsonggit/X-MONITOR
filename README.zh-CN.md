@@ -6,9 +6,8 @@ X Search，监控指定公开账户，并把尚未发送的新帖子推送给 Te
 
 ## 当前监控规则
 
-- 账户：`@Crypto_Cat888`、
-  `@AIonBase_`、`@blu0222`、`@ShawnThread`、`@theunipcs`、
-  `@stitchdegen`、`@lookonchain`、`@XXAntiWar`、`@Jason60704294`、
+- 账户：`@AIonBase_`、`@ShawnThread`、`@theunipcs`、
+  `@lookonchain`、`@XXAntiWar`、`@Jason60704294`、
   `@luge517`、`@xy_xtony`
 - 内容：原创、回复、转帖
 - 关键词：不限制

@@ -95,7 +95,7 @@ Koanf 的 provider、parser 和加载顺序更显式，避免隐式全局状态�
 
 ### 4.5 不采用微服务
 
-单台服务器、11 个账户、每两小时一次，不需要 Redis、Kafka、PostgreSQL 或 Kubernetes。
+单台服务器、8 个账户、每两小时一次，不需要 Redis、Kafka、PostgreSQL 或 Kubernetes。
 
 ## 5. Fx 模块划分
 
@@ -132,12 +132,9 @@ job_timeout = "50m"
 
 [monitor]
 accounts = [
-  "@Crypto_Cat888",
   "@AIonBase_",
-  "@blu0222",
   "@ShawnThread",
   "@theunipcs",
-  "@stitchdegen",
   "@lookonchain",
   "@XXAntiWar",
   "@Jason60704294",
